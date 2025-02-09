@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Tickets</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <button id="menu-toggle" class="burger-btn">☰</button>
+
+    <nav class="navbar">
+        <ul id="menu">
+            <li><a href="index.html">🏠 Welcome</a></li>
+            <li><a href="stats.html">📊 Statistics</a></li>
+            <li><a href="wip.html">WIP</a></li>
+        </ul>
+        <button id="logout-btn" class="logout-btn" title="Déconnexion">🚪Disconnect</button>
+
+    </nav>
+    
+    <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
+
+
+    
+    <div class="container">
+        <h1 class="title">Ticket Trackings</h1>
+    
+
+    <div>
+        <input type="number" id="amount" placeholder="Amount (€)">
+        <select id="type">
+            <option value="Locals">Locals</option>
+            <option value="Guests">Guests</option>
+        </select>
+        <button onclick="addTicket()">Add</button>
+    </div>
+
+    <h2>Summary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Amount (€)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        
+        <tbody id="ticket-list"></tbody>
+    </table>
+
+    <button id="toggle-stats">Show stats. 📊</button>
+<div id="stats-container" class="hidden">
+    <div class="stats-card">
+        <h3>Total Tickets: <span id="total-tickets">0</span></h3>
+        <h3>Total: <span id="total">0</span> €</h3>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span>Locals:</span> <span id="total-locals">0</span> € (<span id="percent-locals">0</span>%)
+            </div>
+            <div class="stat-item">
+                <span>Guests:</span> <span id="total-guests">0</span> € (<span id="percent-guests">0</span>%)
+            </div>
+            <div class="stat-item">
+                <span>Overall average ticket:</span> <span id="average-ticket">0</span> €
+            </div>
+            <div class="stat-item">
+                <span>Average locals ticket</span> <span id="average-ticket-locals">0</span> €
+            </div>
+            <div class="stat-item">
+                <span>Average guests ticket:</span> <span id="average-ticket-guests">0</span> €
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+    <button onclick="exportToCSV()">Exporter CSV 📄</button>
+    <button onclick="resetTable()">Reset 🟥</button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
