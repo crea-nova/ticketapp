@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+        <!-- ✅ Bouton Menu Burger -->
+    <button id="menu-toggle" class="burger-btn">☰</button>
+
+
+
+    <nav class="navbar">
+        <ul id="menu">
+            <li><a href="index.html">🏠 Welcome</a></li>
+            <li><a href="stats.html">📊 Statistics</a></li>
+            <li><a href="wip.html">WIP</a></li>
+        </ul>
+        <button id="logout-btn" class="logout-btn" title="Déconnexion">🚪Disconnect</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="title">Ticket statistics</h1>
+
+        <!-- Section des statistiques générales -->
+        <div class="stats-card">
+            <h3 class="totaltickets">Total Tickets: <span id="total-tickets">0</span></h3>
+
+            <h3>Total: <span id="total">0</span> €</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span>Locals tickets: <span id="total-locals-tickets">0</span> </span>
+                </div>
+                <div class="stat-item">
+                    <span>Guests tickets: <span id="total-guests-tickets">0</span> </span>
+                </div>
+                <div class="stat-item">
+                    <span>Locals:</span> <span id="total-locals">0</span> € (<span id="percent-locals">0</span>)
+                </div>
+                <div class="stat-item">
+                    <span>Guests:</span> <span id="total-guests">0</span> € (<span id="percent-guests">0</span>)
+                </div>
+                <div class="stat-item">
+                    <span>Overall average ticket:</span> <span id="average-ticket">0</span> €
+                </div>
+                <div class="stat-item">
+                    <span>Average locals ticket:</span> <span id="average-ticket-locals">0</span> €
+                </div>
+                <div class="stat-item">
+                    <span>Average guests ticket:</span> <span id="average-ticket-guests">0</span> €
+                </div>
+            </div>
+        </div>
+
+
+        <button id="toggle-chart">📊 Show graphic</button>
+        <div id="chart-container" class="hidden">
+            <canvas id="ticketChart"></canvas>
+        </div>
+        
+        
+
+        <label for="calendar-view">View: </label>
+        <select id="calendar-view">
+            <option value="monthly">📅 Monthly</option>
+            <option value="weekly">🗓️ Weekly</option>
+            <option value="yearly">📆 Yearly</option>
+        </select>
+
+        <!-- Calendrier -->
+        <h2>Ticket history</h2>
+        <div id="calendar"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="utils.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html>

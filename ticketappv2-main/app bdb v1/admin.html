@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="menu-toggle" class="burger-btn">☰</button>
+
+    <nav class="navbar">
+        <ul id="menu">
+            <li><a href="index.html">🏠 Welcome</a></li>
+            <li><a href="stats.html">📊 Statistics</a></li>
+            <li><a href="admin.html">WIP</a></li>
+        </ul>
+        <button id="logout-btn" class="logout-btn" title="Déconnexion">🚪Disconnect</button>
+    </nav>
+
+    <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
+
+
+    <!-- Vérification d'accès (Empêche l'accès aux non-admins)
+    <script>
+        let user = JSON.parse(localStorage.getItem("user"));
+        if (!user || user.role !== "admin") {
+            window.location.href = "index.html"; // Redirection si pas admin
+        }
+    </script> -->
+
+    <h1>🔧 Admin Panel - Gestion des utilisateurs</h1>
+
+    <!-- ✅ Formulaire de création d'utilisateur -->
+    <div class="admin-container">
+        <h2>Créer un utilisateur</h2>
+        <input type="text" id="new-username" placeholder="Nom d'utilisateur">
+        <input type="password" id="new-password" placeholder="Mot de passe">
+        
+        <label for="new-role">Rôle :</label>
+        <select id="new-role">
+            <option value="chef">Responsable</option>
+            <option value="superviseur">Superviseur</option>
+            <option value="admin">Administrateur</option>
+        </select>
+
+        <label for="new-restaurants">Restaurants :</label>
+        <select id="new-restaurants">
+            <option value="Bois Des Bois">Bois Des Bois</option>
+            <option value="Bosrand">Bosrand</option>
+        </select>
+        <button id="create-user-btn">Créer</button>
+    </div>
+
+    <!-- ✅ Liste des utilisateurs -->
+    <div class="user-list">
+        <h2>Liste des utilisateurs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Rôle</th>
+                    <th>Restaurants</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-table"></tbody>
+        </table>
+    </div>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
